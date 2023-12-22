@@ -1,15 +1,23 @@
-import { FC } from "react";
-import { Slider } from "@nextui-org/react";
+"use client";
+import { FC, useState } from "react";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 
 export const AngleSlider: FC = () => {
+  const [angleValue, setAnglaValue] = useState<number | number[]>(0);
+
   return (
-    <Slider
-      label="Angle"
-      step={0.01}
-      maxValue={1}
-      minValue={0}
-      defaultValue={0.4}
-      className="max-w-md"
-    />
+    <div>
+      <Slider
+        style={{ width: "150px", paddingTop: "20px" }}
+        min={0}
+        max={90}
+        step={10}
+        onChange={(value) => {
+          setAnglaValue(value);
+        }}
+      />
+      <div>{angleValue}</div>
+    </div>
   );
 };
