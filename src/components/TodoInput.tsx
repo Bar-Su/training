@@ -1,6 +1,10 @@
 import { Input } from "@nextui-org/react";
 import { FunctionComponent } from "react";
 
-export const TodoInput: FunctionComponent = () => {
-    return <Input style={{border: '5px solid black' }}/>;
+interface InputProps {
+  valueInput: any;
+}
+
+export const TodoInput: FunctionComponent<InputProps> = ({ valueInput }) => {
+  return <Input style={{ border: "5px solid black" }} value={valueInput} />;
 };
