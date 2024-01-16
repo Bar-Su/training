@@ -4,7 +4,7 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
 interface AngleSliderProps {
-  angleValueSlider: any;
+  angleValueSlider: number;
   onAngleChange: (newValue: any) => void;
 }
 
